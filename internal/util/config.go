@@ -9,7 +9,7 @@ func InitConfig() error {
 
 		config.String("REDIS_HOST").NotEmpty().Default("localhost"),
 		config.Int("REDIS_PORT").Default(6379),
-		config.String("REDIS_PASSWORD").Default(""),
+		config.String("REDIS_PASSWORD").Sensitive().Default(""),
 		config.Int("REDIS_DATABASE_INDEX").Default(0),
 		config.Bool("REDIS_SENTINEL").Default(false),
 	}, &config.LoadConfigOptions{
